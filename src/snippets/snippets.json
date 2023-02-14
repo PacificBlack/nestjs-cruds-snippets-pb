@@ -1,0 +1,36 @@
+{
+  "Service Nest Template": {
+    "prefix": [
+      "nest-crud-service-orm-template-norelation",
+      "n-crud-s-orm-tmp-nr"
+    ],
+    "body": [
+      "constructor(@InjectRepository(${1:entity})",
+      "private readonly ${2:e_v_name}_repository : Repository<${1:entity}>",
+      "){}",
+      "\t",
+      "",
+      "async obtener${1:entity}s():Promise<${1:entity}[]> {",
+      "return await this.${2:e_v_name}_repository.find({",
+      "order:{id:'ASC'}",
+      "});",
+      "}",
+      "\t",
+	  "async obtener${1:entity}(id:number):Promise<${1:entity}> {",
+      "return await this.${2:e_v_name}_repository.findOne({",
+      "where:{id:id}",
+      "});",
+      "}",
+      "\t",
+	  "async crear${1:entity}(id:number):Promise<${1:entity}> {",
+      "return await this.${2:e_v_name}_repository.findOne({",
+      "where:{id:id}",
+      "});",
+      "}",
+      "",
+      "",
+      "",
+    ],
+    "description": "Snippet encargado de crear un crud basico para un servició en NestJs"
+  }
+}
